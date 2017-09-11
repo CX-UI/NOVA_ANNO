@@ -306,6 +306,8 @@ struct nova_range_node {
 	unsigned long range_high;
 };
 
+/*
+ * 记录nova inode 一些基本信息**/
 struct nova_inode_info_header {
 	struct radix_tree_root tree;	/* Dir name entry tree root */
 	struct radix_tree_root cache_tree;	/* Mmap cache tree root */
@@ -322,6 +324,8 @@ struct nova_inode_info_header {
 	u64 last_link_change;		/* Last link change entry */
 };
 
+/*
+ * 主要的信息记录在info_header中**/
 struct nova_inode_info {
 	struct nova_inode_info_header header;
 	struct inode vfs_inode;

@@ -1514,6 +1514,7 @@ int nova_allocate_inode_log_pages(struct super_block *sb,
 	int allocated;
 	int ret_pages = 0;
 
+    //分配log blocks
 	allocated = nova_new_log_blocks(sb, pi, &new_inode_blocknr,
 					num_pages, 0);
 
