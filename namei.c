@@ -52,6 +52,7 @@ static struct dentry *nova_lookup(struct inode *dir, struct dentry *dentry,
 	ino = nova_inode_by_name(dir, &dentry->d_name, &de);
 	nova_dbg_verbose("%s: ino %lu\n", __func__, ino);
 	if (ino) {
+        //根据ino得到整个inode的数据结构
 		inode = nova_iget(dir->i_sb, ino);
 		if (inode == ERR_PTR(-ESTALE) || inode == ERR_PTR(-ENOMEM)
 				|| inode == ERR_PTR(-EACCES)) {
